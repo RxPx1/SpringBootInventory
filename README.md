@@ -1,6 +1,8 @@
 Rob Pavlik\
 Student ID# 010779327\
 D287 - Java Frameworks\
+
+Spring Boot Project for D287 Java Frameworks. Made up Pc Builder Company. Sample Inventory added on load up. Ability to purchase Products and have inventory deduct. Logic and Validation setup for entering in new parts with min and max inventory values. 
 \
 \
 Changes to Repo Working Branch-\
