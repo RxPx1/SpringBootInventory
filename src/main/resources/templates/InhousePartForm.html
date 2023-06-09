@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inhouse PC Parts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body style="text-align: center; background-color: lightskyblue">
+<h1 style="margin-top: 10px; font-weight: bolder">Inhouse Part Detail</h1>
+
+<form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="POST"}>
+
+<!-- Add hidden form field to handle update -->
+    <p><input type="hidden" th:field="*{id}"/></p>
+
+    <p style="font-weight: bolder; padding-top: 10px">ENTER NAME:<br><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4" style="width: 200px; text-align: center; margin-top: 10px"/></p>
+    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+
+    <p style="font-weight: bolder; padding-top: 10px">ENTER PRICE:<br><input type="text" path="price" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4" style="width: 200px; text-align: center; margin-top: 10px"/></p>
+    <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
+
+    <p style="font-weight: bolder; padding-top: 10px">ENTER # IN STOCK:<br><input type="text" path="inv" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4" style="width: 200px; text-align: center; margin-top: 10px"/></p>
+    <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+
+    <p style="font-weight: bolder; padding-top: 10px">ENTER MINIMUM STOCK:<br><input type="text" path="minInv" th:field="*{minInv}" placeholder="Min Inventory" class="form-control mb-4 col-4" style="width: 200px; text-align: center; margin-top: 10px"/></p>
+    <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">Inventory Error</p>
+
+    <p style="font-weight: bolder; padding-top: 10px">ENTER MAXIMUM STOCK:<br><input type="text" path="maxInv" th:field="*{maxInv}" placeholder="Max Inventory" class="form-control mb-4 col-4" style="width: 200px; text-align: center; margin-top: 10px"/></p>
+    <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Inventory Error</p>
+
+    <p style="font-weight: bolder; padding-top: 10px">ENTER PART ID#:<br><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4" style="width: 200px; text-align: center; margin-top: 10px"/></p>
+<br>
+    <p><input type="submit" value="Submit" style="background-color: whitesmoke; color: black; font-weight: bold; width: 100px"/></p>
+</form>
+<p><errors path="price" cssClass=""error/><p>
+<br>
+    <button onclick="window.location.href = 'http://localhost:8080/';" style="background-color: whitesmoke; color: black; font-weight: bold; width: 100px">Main Screen</button>
+</body>
+</html>
